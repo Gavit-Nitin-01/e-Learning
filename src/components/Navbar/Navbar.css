@@ -6,7 +6,8 @@ header{
 	align-items: center;
 	/* background: #6327c4; */
 	justify-content: center;
-	border: 1px solid var(--hading-text-color);
+
+	border-bottom: 1px solid var(--hading-text-color);
 }
 
 

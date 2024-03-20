@@ -1,0 +1,18 @@
+.error-container{
+    width: 100%;
+    height: 50%;
+    background-color: white;
+
+}
+.error{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 30px;
+}
+
+.btnerr{
+    display: flex;
+    justify-content: center;
+}

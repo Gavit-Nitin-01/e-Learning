@@ -1,14 +1,22 @@
 import React from 'react'
-import { NavLink } from "react-router-dom";
+import "./Error.css"
 
 export default function Error() {
-  return (
-     <>
-      <img src="images/error.svg" alt="error" />
-      <button>lsjdl</button>
-     </>
+    return (
+        <>
+            <div className="erro-container">
 
-  )
+                <div className="error">
+
+                    <img src="error.svg" alt="error" />
+                    <div className="login-nextpg btnerr" >
+                        <a href='/'>Back</a>
+                    </div>
+                </div>
+            </div>
+        </>
+
+    )
 }
 
 

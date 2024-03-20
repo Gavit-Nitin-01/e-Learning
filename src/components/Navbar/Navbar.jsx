@@ -20,10 +20,11 @@ export default function Navbar() {
                     <input type="checkbox" id="check" name="check" />
                     <ul className="links">
                         <label htmlFor="check" id="checkbtn"><i className="fa fa-xmark"></i></label>
-                        <li><Link to="/">home</Link></li>
-                        <li><Link to="/">about</Link></li>
-                        <li><Link to="/">services</Link></li>
-                        <li><Link to="/">gallery</Link></li>
+                        {/* <li><Link to="/">home</Link></li> */}
+                        {!localStorage.getItem('token')? <li><Link to="/">home</Link></li>:<li><Link to="/course">course</Link></li>}
+                        <li><Link to="/about">about</Link></li>
+                        <li><Link to="/services">services</Link></li>
+                        <li><Link to="/gallery">gallery</Link></li>
                         <li><Link to="/contact">contact</Link></li>
                         {/* {localStorage.getItem('token') ? <li><Link to="/" id="lgin" hidden>Login</Link></li> : <li><Link to="/" id="lgin" hidden>Logout</Link></li>} */}
                         {!localStorage.getItem('token') ? <form className="d-flex">
