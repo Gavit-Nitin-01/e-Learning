@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom'
 import './Footer.css'
 export default function Footer() {
     return (
@@ -6,18 +7,18 @@ export default function Footer() {
             <footer>
                 <div className="foot-links">
                     <ul className="terms1">
-                        <li><a href="/">Business</a></li>
-                        <li><a href="/">Teach on e-Learning</a></li>
-                        <li><a href="/">Get the app</a></li>
-                        <li><a href="/">About us</a></li>
-                        <li><a href="/">Contact us</a></li>
+                        <li><Link to="/">Business</Link></li>
+                        <li><Link to="/">Teach on e-Learning</Link></li>
+                        <li><Link to="/">Get the app</Link></li>
+                        <li><Link to="/">About us</Link></li>
+                        <li><Link to="/contact">Contact us</Link></li>
                     </ul>
                     <ul className="terms2">
-                        <li><a href="/">Careers</a></li>
-                        <li><a href="/">Blog</a></li>
-                        <li><a href="/">Help and Support</a></li>
-                        <li><a href="/">Affiliate</a></li>
-                        <li><a href="/">Investors</a></li>
+                        <li><Link to="/">Careers</Link></li>
+                        <li><Link to="/">Blog</Link></li>
+                        <li><Link to="/">Help and Support</Link></li>
+                        <li><Link to="/">Affiliate</Link></li>
+                        <li><Link to="/">Investors</Link></li>
                     </ul>
 
                     <div className="lng">

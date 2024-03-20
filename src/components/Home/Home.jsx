@@ -1,4 +1,4 @@
-import  { useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import './Home.css'
 export default function Home() {
@@ -18,7 +18,7 @@ export default function Home() {
         if (json.success) {
             localStorage.setItem('token', json.authtoken)
             alert('Login Successfuly');
-            navigate('/login');
+            navigate('/course');
         } else {
             alert('invalid details');
         }
@@ -33,7 +33,7 @@ export default function Home() {
             <main>
                 <div className="hero">
 
-                    <section className="hero-containt">
+                {!localStorage.getItem('token') ?<section className="hero-containt">
                         <h1>Welcome to e-Learning</h1>
                         <p>e-Learning is optimized for learning and training. Examples might be simplified to improve
                             reading
@@ -43,8 +43,11 @@ export default function Home() {
                             full correctness
                             of all content. </p>
                         <button>Let's Start</button>
-                    </section>
-                    <section className="login-detials">
+                    </section>:<div className="login-nextpg" style={{textAlign:'center',margin:'10px'}}>
+                                
+                                <button>sign up</button>
+                            </div>}
+                    {!localStorage.getItem('token') ? <section className="login-detials">
                         <p>Already have an account?</p>
                         <form action="" onSubmit={handleSubmit}>
 
@@ -57,7 +60,7 @@ export default function Home() {
                             <div className="login-input">
                                 <label htmlFor="Password">Password</label><br />
                                 <span><i className="fa-solid fa-lock"></i></span>
-                                <input type="Password"  value={credentials.password} onChange={onChange} name="password" id="Password" />
+                                <input type="Password" value={credentials.password} onChange={onChange} name="password" id="Password" />
 
                             </div>
                             <div className="login-btn">
@@ -68,7 +71,7 @@ export default function Home() {
                                 <button>sign up</button>
                             </div>
                         </form>
-                    </section>
+                    </section> : ""}
                 </div>
                 <section className="containt">
                     <h2>Testimonials</h2>

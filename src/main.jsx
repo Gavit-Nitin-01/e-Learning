@@ -10,8 +10,8 @@ import {
 
 import App from './App.jsx'
 import Home from './components/Home/Home.jsx'
-import Login from './components/Login/Login.jsx';
 import Contact from './components/Contact/Contact.jsx';
+import Course from './components/CoursePage/Course.jsx';
 
 
 const router = createBrowserRouter(
@@ -19,8 +19,8 @@ const router = createBrowserRouter(
 
     <Route path="/" element={<App/>}>
       <Route path='/' element={<Home/>} />
-      <Route path='/login' element={<Login />} />
       <Route path='/contact' element={<Contact />} />
+      <Route path='/course' element={<Course />} />
     </Route>
 
 
