@@ -12,6 +12,8 @@ import App from './App.jsx'
 import Home from './components/Home/Home.jsx'
 import Contact from './components/Contact/Contact.jsx';
 import Course from './components/CoursePage/Course.jsx';
+import Error from './components/Error/Error.jsx';
+// import Error from './Error.jsx';
 
 
 const router = createBrowserRouter(
@@ -21,6 +23,9 @@ const router = createBrowserRouter(
       <Route path='/' element={<Home/>} />
       <Route path='/contact' element={<Contact />} />
       <Route path='/course' element={<Course />} />
+      <Route path='*' element={<Error/>} />
+      {/* <Route path='*' element={<Error/>}/> */}
+
     </Route>
 
 

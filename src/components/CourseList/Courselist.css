@@ -1,0 +1,22 @@
+
+.course{
+    width: 100%;
+    height: 30px;
+    background-color: #141478
+}
+.course ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.course ul li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    margin: 0 15px;
+}
+.course ul li a{
+    color: white;
+    text-decoration: none;
+}
