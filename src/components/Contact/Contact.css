@@ -1,5 +1,3 @@
-
-
 .contactus {
     font-size: 35px;
     margin: 0px 60px;
@@ -14,60 +12,30 @@
 }
 
 .box1 {
-    height: 500px;
+    height: 450px;
     width: 100%;
 }
 
 .box1 p {
-    margin: 10px 50px;
+    width: 50%;
+    margin: 10px 27%;
     color: var(--hading-text-color);
 }
 
 .box1 img {
-    height: 290px;
-    margin: 50px 15%;
-}
+    height: 270px;
+    margin-top: 30px;
+    margin-left: 35%;
 
-.box2 {
-    height: 500px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.box2 input {
-    height: 43px;
-    width: 80%;
-    margin: 11px 0px;
-    padding-left: 10px;
-    border-radius: 15px;
-    border: 1px solid var(--box-border-color);
-    box-shadow: 0px 0px 3px 0px var(--box-border-color);
-}
-
-textarea {
-    width: 80%;
-    margin: 10px 0px;
-    padding: 10px 10px;
-    border-radius: 16px;
-    box-shadow: 0px 0px 3px 0px var(--box-border-color);
-}
-
-.submit {
-    font-size: 20px;
-    color: var(--text-second-color);
-    background-color: var(--button-bg-color);
 }
 
 .contactitem {
     height: 155px;
     width: 100%;
     display: flex;
+    column-gap: 100px;
     justify-content: center;
     align-items: center;
-    justify-content: space-around;
     color: var(--text-second-color);
 }
 
@@ -90,6 +58,11 @@ textarea {
 .location a {
     text-decoration: none;
     color: var(--hading-text-color);
+}
+
+.email {
+    margin-left: 60px;
+
 }
 
 .email i {
@@ -115,120 +88,13 @@ textarea {
 }
 
 h3 {
-    color: var(--box-border-color);
+    align-items: center;
     font-size: 30px;
+    color: var(--box-border-color);
 }
 
 
-
-/* tab Media query */
-
-@media only screen and (max-width:768px) {
-    .contactus {
-        font-size: 25px;
-        margin: 0px 40px;
-        color: var(--hading-text-color);
-    }
-
-    .container {
-        display: flex;
-    }
-
-    .box1 {
-        height: 450px;
-        width: 50%;
-    }
-
-    .box1 p {
-        font-size: 14px;
-        margin: 10px 40px;
-        color: var(--hading-text-color);
-    }
-
-    .box1 img {
-        height: 210px;
-        margin: 10px 0px;
-    }
-
-    .box2 {
-        height: 450px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .box2 input {
-        height: 35px;
-        width: 80%;
-        font-size: 12px;
-        margin: 11px 0px;
-        padding-left: 10px;
-        border-radius: 15px;
-        border: 1px solid var(--box-border-color);
-        box-shadow: 0px 0px 3px 0px var(--box-border-color);
-    }
-
-    textarea {
-        height: 70px;
-        width: 80%;
-        margin: 10px 0px;
-        padding: 10px 10px;
-        border-radius: 16px;
-        box-shadow: 0px 0px 3px 0px var(--box-border-color);
-    }
-
-    .submit {
-        color: var(--text-second-color);
-        background-color: var(--button-bg-color);
-    }
-
-    .contactitem {
-        height: 140px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        justify-content: space-around;
-        color: var(--text-second-color);
-    }
-
-    .contactitem i {
-        height: 60px;
-        width: 60px;
-        border-radius: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--button-bg-color);
-    }
-
-    .location i {
-        font-size: 40px;
-        align-items: center;
-        border: 2px solid var(--box-border-color);
-    }
-
-    .email i {
-        font-size: 40px;
-        align-items: center;
-        border: 2px solid var(--box-border-color);
-    }
-
-    .phone i {
-        font-size: 40px;
-        align-items: center;
-        border: 2px solid var(--box-border-color);
-    }
-
-    h3 {
-        font-size: 22px;
-        color: var(--box-border-color);
-    }
-}
-
-/* mobile media query */
+/* mobile screen media query*/
 
 @media only screen and (max-width:480px) {
     .contactus {
@@ -256,57 +122,25 @@ h3 {
         height: auto;
         width: auto;
         font-size: 13px;
-        margin: 8px 40px;
+        margin: 8px 30px;
         color: var(--hading-text-color);
     }
 
     .box1 img {
         height: 190px;
-        margin-left: 10px;
-    }
+        margin: 10px 15%;
 
-    .box2 {
-        height: 330px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .box2 input {
-        height: 30px;
-        width: 70%;
-        font-size: 12px;
-        margin: 11px 0px;
-        padding-left: 10px;
-        border-radius: 15px;
-        border: 1px solid var(--box-border-color);
-        box-shadow: 0px 0px 3px 0px var(--box-border-color);
-    }
-
-    textarea {
-        height: 55px;
-        width: 70%;
-        margin: 10px 0px;
-        padding: 10px 10px;
-        border-radius: 16px;
-        box-shadow: 0px 0px 3px 0px var(--box-border-color);
-    }
-
-    .submit {
-        color: var(--text-second-color);
-        background-color: var(--button-bg-color);
     }
 
     .contactitem {
         height: 120px;
         width: 100%;
         margin: 0px 0px;
+        column-gap: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
-        justify-content: space-between;
+        /* justify-content: space-between; */
         color: var(--text-second-color);
     }
 
@@ -320,8 +154,6 @@ h3 {
         color: var(--button-bg-color);
     }
 
-    .contactitem a {}
-
     .location i {
         font-size: 30px;
         align-items: center;
@@ -332,6 +164,10 @@ h3 {
         font-size: 30px;
         align-items: center;
         border: 2px solid var(--box-border-color);
+    }
+
+    .phone {
+        margin-right: px;
     }
 
     .phone i {
