@@ -2,78 +2,79 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import './Sing.css'
 import { useNavigate } from 'react-router-dom';
+import './Sing.css'
+
+
 export default function Singup() {
-
+    //frontedn javascript code
     const [show, setShow] = useState(false);
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    function handleClick() {
-        const loginText = document.querySelector(".title-text .login");
-        const loginForm = document.querySelector("form.login");
-        const loginBtn = document.querySelector("label.login");
-        const signupBtn = document.querySelector("label.signup");
-        const signupLink = document.querySelector("form .signup-link a");
 
-        signupBtn.onclick = (() => {
-            loginForm.style.marginLeft = "-50%";
-            loginText.style.marginLeft = "-50%";
-        });
-        loginBtn.onclick = (() => {
-            loginForm.style.marginLeft = "0%";
-            loginText.style.marginLeft = "0%";
-        });
-        signupLink.onclick = (() => {
-            signupBtn.click();
-            return false;
-        });
-    }
+    const loginText = document.querySelector(".title-text .login");
+    const loginForm = document.querySelector("form.login");
+    const loginBtn = document.querySelector("label.login");
+    const signupBtn = document.querySelector("label.signup");
+    const signupLink = document.querySelector("form .signup-link a");
 
-    //student registration 
-    const [credentials, setCredentials] = useState({ name: "",phone:"", email: "", password: "", cpassword: "" })
-    let navigate = useNavigate();
+    signupBtn.onclick = () => {
+        loginForm.style.marginLeft = "-50%";
+        loginText.style.marginLeft = "-50%";
+    };
+    loginBtn.onclick = () => {
+        loginForm.style.marginLeft = "0%";
+        loginText.style.marginLeft = "0%";
+    };
+    signupLink.onclick = () => {
+        signupBtn.click();
+        return false;
+    };
+}
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const { name,phone, email, password } = credentials;
-        const response = await fetch("http://localhost:4000/api/student/createstd", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ name,phone, email, password })
-        });
-        const json = await response.json();
-        console.log(json)
+//student registration 
+const [credentials, setCredentials] = useState({ name: "", phone: "", email: "", password: "", cpassword: "" })
+let navigate = useNavigate();
+
+const handleSubmit = async (e) => {
+    e.preventDefault();
+    const { name, phone, email, password } = credentials;
+    const response = await fetch("http://localhost:4000/api/student/createstd", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, phone, email, password })
+    });
+    const json = await response.json();
+    console.log(json)
+    localStorage.setItem('token', json.authtoken)
+    alert("Registration Successfuly")
+    navigate('/');
+
+}
+const onChange = (e) => {
+    setCredentials({ ...credentials, [e.target.name]: e.target.value })
+}
+
+
+//studetn login 
+const handleLogin = async (e) => {
+    e.preventDefault();
+    const response = await fetch("http://localhost:4000/api/student/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: credentials.email, password: credentials.password })
+    });
+    const json = await response.json();
+    console.log(json)
+    if (json.success) {
         localStorage.setItem('token', json.authtoken)
-        alert("Registration Successfuly")
-        navigate('/');
-
-    }
-    const onChange = (e) => {
-        setCredentials({ ...credentials, [e.target.name]: e.target.value })
+        alert('Login Successfuly');
+        navigate('/course');
+    } else {
+        alert('invalid details');
     }
 
-
-    //studetn login 
-    const handleLogin = async (e) => {
-        e.preventDefault();
-        const response = await fetch("http://localhost:4000/api/student/login", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email: credentials.email, password: credentials.password })
-        });
-        const json = await response.json();
-        console.log(json)
-        if (json.success) {
-            localStorage.setItem('token', json.authtoken)
-            alert('Login Successfuly');
-            navigate('/course');
-        } else {
-            alert('invalid details');
-        }
-    }
 
     return (
         <>
@@ -100,12 +101,12 @@ export default function Singup() {
                                 <div className="slider-tab"></div>
                             </div>
                             <div className="form-inner">
-                                <form action="#" onClick={handleClick} onSubmit={handleLogin} className="login">
+                                <form action="#" onSubmit={handleLogin} className="login">
                                     <div className="field">
-                                        <input type="email"  value={credentials.email} onChange={onChange} name='email' placeholder="Email Address" required />
+                                        <input type="email" value={credentials.email} onChange={onChange} name='email' placeholder="Email Address" required />
                                     </div>
                                     <div className="field">
-                                        <input type="password"  value={credentials.email} onChange={onChange} name='password' placeholder="Password" required />
+                                        <input type="password" value={credentials.email} onChange={onChange} name='password' placeholder="Password" required />
                                     </div>
                                     <div className="pass-link"><a href="#">Forgot password?</a></div>
                                     <div className="field btn">
@@ -130,7 +131,7 @@ export default function Singup() {
                                     <div className="field">
                                         <input type="password" name='cpass' onChange={onChange} placeholder="Confirm password" minLength={6} required />
                                     </div>
-                                    <div className="field btn"> 
+                                    <div className="field btn">
                                         <div className="btn-layer"></div>
                                         <input type="submit" value="Signup" />
                                     </div>
