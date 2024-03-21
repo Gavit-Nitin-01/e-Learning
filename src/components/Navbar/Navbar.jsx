@@ -1,9 +1,7 @@
 
 import { Link, useNavigate } from 'react-router-dom'
-
 import './Navbar.css'
-import { useRef } from 'react';
-import Login from '../Login/Login';
+import Singup from '../Singup/Singup';
 
 export default function Navbar() {
     let navigate = useNavigate();
@@ -30,8 +28,8 @@ export default function Navbar() {
                         <li><Link to="/contact">contact</Link></li>
                         {/* {localStorage.getItem('token') ? <li><Link to="/" id="lgin" hidden>Login</Link></li> : <li><Link to="/" id="lgin" hidden>Logout</Link></li>} */}
                         {!localStorage.getItem('token') ? <div className="d-flex">
-                            <Login />
-                            <Link type="button" to="/signup" className="btn btn-primary mx-2">SignUp</Link>
+                            <Singup/>
+                            
                         </div> : <button onClick={handleLogout} className='btn btn-primary mx-2'>Logout</button>}
                     </ul>
 
