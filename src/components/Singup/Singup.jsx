@@ -16,8 +16,7 @@ export default function Singup() {
         const loginBtn = document.querySelector("label.login");
         const signupBtn = document.querySelector("label.signup");
         const signupLink = document.querySelector("form .signup-link a");
-
-
+        
         signupBtn.onclick = (() => {
             loginForm.style.marginLeft = "-50%";
             loginText.style.marginLeft = "-50%";
@@ -35,7 +34,7 @@ export default function Singup() {
 
     return (
         <>
-            <Button variant="primary" onClick={handleShow}>
+            <Button className='btn btn-primary mx-2' onClick={handleShow}>
                SignUp
             </Button>
 
