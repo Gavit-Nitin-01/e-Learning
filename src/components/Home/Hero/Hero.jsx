@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import Singup from '../../Singup/Singup';
 
 export default function Hero() {
     const [credentials, setCredentials] = useState({ email: "", password: "" })
@@ -24,6 +25,9 @@ export default function Hero() {
     }
     const onChange = (e) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value })
+    }
+    const handleClick = () =>{
+        navigate('');
     }
     return (
         <>
@@ -62,8 +66,10 @@ export default function Hero() {
                             <button>Login</button>
                         </div>
                         <div className="login-nextpg">
-                            <a href="/">Forgotten your username or password?</a><br />
-                            <button>sign up</button>
+                            <Link to="" onClick={handleClick}>Admin Login</Link>
+                            <Link>/</Link>
+                            <Link to="">Forgotten your username or password?</Link><br />
+                            <button><Singup/></button>
                         </div>
                     </form>
                 </section> : ""}

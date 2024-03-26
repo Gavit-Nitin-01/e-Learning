@@ -1,9 +1,9 @@
 
 import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Sing.css'
+import { Button } from 'bootstrap';
 
 
 export default function Singup() {
@@ -50,7 +50,7 @@ export default function Singup() {
         console.log(json)
         localStorage.setItem('token', json.authtoken)
         alert("Registration Successfuly")
-        navigate('/');
+        navigate('/admin');
 
     }
     const onChange = (e) => {
@@ -76,12 +76,13 @@ export default function Singup() {
             alert('invalid details');
         }
     }
+    const handleAdmin = () =>{
+        navigate('/admin');
+    }
 
     return (
         <>
-            <Button className='btn btn-primary mx-2' onClick={handleShow}>
-                SignUp
-            </Button>
+            <button type="button" class="singup-btn " onClick={handleShow}>SignUp</button>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
@@ -109,6 +110,7 @@ export default function Singup() {
                                     <div className="field">
                                         <input type="password"  value={credentials.email} onChange={onChange} name='password' placeholder="Password" required />
                                     </div>
+                                    <div className="pass-link"><Link to="" onClick={handleAdmin}>Admin Login</Link></div>
                                     <div className="pass-link"><a href="#">Forgot password?</a></div>
                                     <div className="field btn">
                                         <div className="btn-layer"></div>
